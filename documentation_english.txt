@@ -1,0 +1,99 @@
+Computer Science Fundamentals Assignment Documentation
+Created by: Hajnalka Horváth
+Neptun code: XXNVW8
+Date: 2022.10.01.-2022.11.30.
+Input file: input.txt
+Output file: output.txt
+
+Task: Develop a program capable of performing basic arithmetic operations on integers stored in BCD format.
+
+Operations:
+Addition
+Subtraction
+Multiplication
+Division
+
+Conditions:
+The task allows the use of maximum 32-bit arithmetic with shifting.
+Implement operations using only addition, subtraction, negation, and logical operations.
+Read data character by character from the file; string operations are not allowed.
+There should be no errors during the execution of operations.
+The solution should contain appropriate documentation for the program.
+
+Solution:
+
+The program first reads the file character by character:
+i, j = loop variables
+number1 = original first number stored in a list
+number2 = original second number stored in a list
+sign = operator sign
+exercise = complete operation including '\n' stored in a list
+
+Function Declarations:
+
+def decimaltobcd = Convert a linked list of single-digit decimal numbers to a linked list of BCD numbers
+    number = decnumber = list of decimal numbers
+    number_bcd = number in BCD (linked list)
+    bcd = BCD code of a digit
+    endofnumber = while the original number divided by two has a remainder not equal to 0, it's false
+number1_bcd = first number in BCD
+number2_bcd = second number in BCD
+
+def bcdtodecimal = Convert a linked list of BCD to either a normal list or an integer
+    bcdnumber = number to convert
+    decimal = a decimal digit
+    decimalnumber = complete decimal number
+
+def dectoint = Convert an array of single-digit decimal numbers to an integer
+    dec = original decimal digit
+    pos = position
+    intnumber = number in integer format
+
+def inttohexadecimal = Convert an integer to a hexadecimal number
+    integer = original number
+    hexa = hexadecimal representation of the number
+
+def addition = Add numbers (first checks for exceptional cases, then performs conventional addition)
+    bcd1 = number to which we add
+    bcd2 = number to be added
+    sum = result
+    partial_result = partial result
+    bcdidx = digit index
+    bitidx = bit index within BCD
+    carry = carry bit
+
+def correction = Correct addition results, fix invalid BCDs (add 6 to the result)
+    res = result
+    correct = corrected version
+    corresult = in case there is a carry during correction and it needs to be added to the preceding element
+    end = end of calculation
+
+def subtraction = Subtraction (add the 9's complement of the number to be subtracted from the smaller number, then increase the value by the remaining carry)
+    minuend = smaller number
+    subtrahend = number to subtract
+    difference = result
+    swap = swap (if the smaller number is greater, swap the two numbers and perform the subtraction)
+    compliment9 = 9's complement of the entire number to be subtracted
+    originaldec = decimal value of the number to be subtracted
+    complbcd = 9's complement in BCD
+    subtractresult = difference without correction (correction: add the remaining carry to the beginning of the number)
+
+def multiplication = Multiply (multiply the multiplicand by itself)
+    multiplicand = number to be multiplied
+    multiplier = multiplier
+    intmultiplier = multiplier in integer
+    product = product
+
+def division = Divide (determine how many times the divisor can be subtracted from the dividend)
+    dividend = dividend
+    divisor = divisor
+    quotient = quotient, original value is 0, changed based on whether the dividend is greater than the divisor
+
+Helper Functions:
+    fill with 0's = to facilitate calculation, identical decimal places go to the same index
+    which is smaller = aids in subtraction and division
+
+The program executes the function corresponding to the operator sign.
+result = final result
+decimalresult = final result in decimal format
+hexaresult = final result in hexadecimal format

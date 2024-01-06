@@ -1,0 +1,100 @@
+Számítástechnika alapjai beadandó dokumentáció
+Készítette: Horváth Hajnalka
+Neptun-kód: XXNVW8
+Dátum: 2022.10.01.-2022.11.30.
+Input file: input.txt
+Output file: output.txt
+
+
+Feladat: Készítsen programot amely alkalmas BCD kód formájában tárolt egész számokkal való alapműveletek elvégzésére
+
+Műveletek:
+Összeadás
+Kivonás
+Szorzás
+Osztás
+
+Feltételek:
+A feladat során maximum 32 bites aritmetikát alkalmazhat eltolás
+A műveletek megvalósításához csak összeadás, kivonás, negálás, és logikai muveleteket használhat.
+A file-ból karakterenként kell beolvasni az adatokat és string műveleteknem használhatók
+Nem lehet semmilyen hiba a művelet elvégzése közben.
+A megoldásnak tartalmaznia kell a program megfelelő dokumentációját.
+
+Megoldas:
+
+A program eloszor is beolvassa a fajlt karakterenkent:
+i, j = cikluslepteto
+number1 = eredeti 1.szam listaban
+number2 = eredeti 2.szam listaban
+sign = muveleti jel
+exercise = teljes muvelet \n-ekkel egyutt listaban
+
+Fuggvenydeklaraciok:
+
+def decimaltobcd = egyjegyu decimalis szamokbol allo lncolt listat alakit at bcd szamokat tarolo lancolt listava
+    number = decnumber = decimalis szamokbol allo lista
+    number_bcd = szam bcdben(lancolt lista)
+    bcd = egy szamjegy bcd kodja
+    endofnumber = amig az eredeti szam erteke maradekosan osztva kettovel nem egyenlo 0, addig hamis
+number1_bcd = elso szam bcdben
+number2_bcd = masodik szam bcdben
+
+def bcdtodecimal = bcd lancolt listat vagy normal listat vagy intet alakit at decimalis szamokra
+    bcdnumber = atalakitando szam
+    decimal= egy decimalis szamjegy
+    decimalnumber= egesz decimalis szam
+
+def dectoint = egyjegyu decimalis szamokbol allo tombot alakit at intre
+    dec-eredeti decimalis szamjegy
+    pos- pozicioja
+    intnumber - szam intben
+
+def inttohexadecimal = int szamot alakit at hexadecimalis szamma
+    integer = eredeti szam 
+    hexa = hexa kodja a szamnak
+
+def additioan = osszead ( eloszor megnezi a kiveteles eseteket, majd elvegzi a hagyomanyos osszeadast)
+    bcd1= bcd szam, amihez hozzaadunk
+    bcd2 = bcd szam, amit hozzaadunk
+    sum = eredmeny
+    partial_result = reszeredmeny
+    bcdidx = szamjegy indexe
+    bitidx = bit indexe bcdn belul
+    carry = atviteli bit
+
+def correction = osszeadas eredmenyek korrigalasa, ervenytelen bcd kijavitasa(6-ot hozzaad az eredmenyhez)
+    res = eredmeny
+    correct = javitott valtozat
+    corresult = abban az esetben,ha a korrigalas soran keletkezik atviteli bit es azt hozza kell adni az adott elem elott levo elemhez 
+    end = szamolas vege
+
+def subtraction = kivonas(kissebbitendohoz hozzaadjuk a kivonando 9es komplementeret, majd az erteket noveljuk a maradek atviteli bittel)
+    minuend = kissebbitendo
+    subtrahend = kivonando
+    difference = kulonbseg
+    swap = csere (ha a kissebbitendo nagyobb, akkor megcsereli a ket szamot, es ugy vegzi el a kivonast)
+    compliment9 = teljes szam 9es komplementere a kivonandonak
+    originaldec = kivonando decimalis erteke
+    complbcd = 9es komplementer bcdben
+    subtractresult = korrigalas nelkuli kulonbseg (korrigalas : hozzaadja a maradek atviteli bitet a szam elejerol)
+
+def multiplication (szorzoszor osszeadja a szorzandot onmagaval)
+    multiplicand = szorzando
+    multiplier = szorzo
+    intmultiplier = szorzo intben
+    product = szorzat
+
+def division = osztas(osztandobol hanyszor tudjuk kivonni az osztot)
+    dividend = osztando
+    divisor = oszto
+    quotient = hanyados, eredeti erteke 0, ha az osztando nagyobb az osztonal, erteket valtoztatjuk
+
+seged= 
+    feltoltes 0-val = a konnyebb szamolas erdekeben, azonos tizedesjegyek egy indexhez kerulnek
+    melyik kisebb= kivonasnal, osztasnal segit
+
+A program a muveleti jelnek megfelelo fuggvenyt futtatja le
+result = vegeredmeny
+decimalresult = vegeredmeny decimalis alakban
+hexaresult = vegeredmeny hexadecimalis alakban
