@@ -1,9 +1,13 @@
 """
-Fundamentals of Computer Science Assignment
+Computer Science Fundamentals Assignment Documentation
 Created by: Hajnalka Horváth
 Neptun code: XXNVW8
+Date: 2022.10.01.-2022.11.30.
+Input file: input.txt
+Output file: output.txt
 """
 # Reading the file---------------------------------------------------------------------
+
 file = open("input.txt", "r")
 
 exercise=[]
@@ -114,7 +118,7 @@ def bcdtodecimal(bcdnumber):
     #print(decimalnumber)
     return decimalnumber
 
-#print(bcdtodecimal(number1_bcd[0]))
+# print(bcdtodecimal(number1_bcd[0]))
 
 # Conversion: Decimal to Integer
 
@@ -173,7 +177,7 @@ def addition(bcd1, bcd2):
     carry = 0
     while bcdidx >= 0:
         while bitidx >= 0:
-            #kivételek = 9+9, 8+8, 7+9
+            # exceptions = 9+9, 8+8, 7+9
             if bcd1[bcdidx]== [1,0,0,0] and bcd2[bcdidx] == [1,0,0,0] or bcd1[bcdidx]== [1,0,0,1] and bcd2[bcdidx] == [0,1,1,1] or bcd1[bcdidx]== [0,1,1,1] and bcd2[bcdidx] == [1,0,0,1]:
                 if carry == 0:
                     partial_result = [0,1,1,0]
