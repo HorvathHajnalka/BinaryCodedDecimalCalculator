@@ -10,7 +10,7 @@ This Python script is developed as a part of a Computer Science fundamentals ass
 
 **Files**  
 - Input: `input.txt`  
-- Script: `main.py`  
+- Script: `BCD_calculator.py`  
 - Output: `output.txt`  
 
 **Prerequisites**  
@@ -25,7 +25,7 @@ Ensure you have Python installed on your machine to execute the script. This cod
    ```
 2. Run the script using the command:
    ```bash
-   python main.py
+   python BCD_calculator.py
    ```
 3. Check the `output.txt` file for results.
 
